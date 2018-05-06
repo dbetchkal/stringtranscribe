@@ -3,11 +3,15 @@
 
 Imagine you're playing music with an unconventional ensemble made up of an electric bass guitar, 5-string electric octave mandolin, and a lap steel guitar in C-6 tuning. Outside of the most basic chords, odds are that you and your friends are not going to have a clear way of of communicating songs to one another. To further complicate things, casual musicians may only be familiar with one type notation (say, tabulature) further constraining the ability of the group to learn new songs.
 
-The purpose of this repository is to provide a way to transcribe music across a wide variety of stringed instruments. By visualizing notes directly on the fretboard of the musician's instrument it attempts to facilitate the exploration of more nuanced harmony when learning compositions. notation that suits them best.
+The purpose of this repository is to provide a way to transcribe music across a wide variety of stringed instruments. By visualizing notes directly on the fretboard of the musician's instrument it attempts to facilitate the exploration of more nuanced harmony when learning compositions. It also allows musicians to choose the notation that suits their learning best.
+
+Fidelity to the harmonic structure of a song is expressed by the concept of [_raag_](https://en.wikipedia.org/wiki/Raga) within the context of Indian classical music:
+>"A harmonious note, melody, formula, or building block of music available to a musician to construct a state of experience in the audience."
+
 
 ## A note on the color scheme
 
-Throughout this module I use a color scheme that utilizes the agreement between the chromatic scale in music and the chromatic color wheel in pigments, both of which have twelve values. The module allows for use of either [alpha (i.e., letter) notation](https://en.wikipedia.org/wiki/Letter_notation) or [integer notation](https://en.wikipedia.org/wiki/Pitch_class#Integer_notation), where "C" = 0. 
+Throughout this module I use a color scheme that leverages the agreement between the chromatic scale in music and the chromatic color wheel in pigments, both of which have twelve values. The module allows for use of either [alpha (i.e., letter) notation](https://en.wikipedia.org/wiki/Letter_notation) or [integer notation](https://en.wikipedia.org/wiki/Pitch_class#Integer_notation), where "C" = 0. 
 
 To maximize contrast in the plots, progressive colors of the chromatic color wheel are assigned to progressive notes of [the circle of 5ths](https://en.wikipedia.org/wiki/Circle_of_fifths) - each representing seven steps of the chromatic scale:
 
@@ -36,7 +40,7 @@ fiddle = Instrument(num_frets = 10, tuning = ["G", "D", "A", "E"])
 ---
 
 Since the guitar is in a major open tuning we know one obvious way to play a 'D' chord is to barre across the 2nd fret.
-But what other ways of voicing 'D' are available?  Knowing the letter names of the notes in a 'D' chord we can use the [`.raag()`](https://en.wikipedia.org/wiki/Raga) method to find out:
+But what other ways of voicing 'D' are available?  Knowing the letter names of the notes in a 'D' chord we can use the `.raag()` method to find out:
 ```
 openC_guitar.raag(["D","F#","A"])
 ```
@@ -58,9 +62,23 @@ Now, what can the fiddler play that would sound good along with the guitar?  Any
 ```
 fiddle.raag(openC_guitar.tabToAlpha([2, 2, 2, 2, 2, 2]))
 ```
-<img src="https://github.com/dbetchkal/stringtranscribe/blob/master/static/D_chord-fiddle.png" width="900">
+<img src="https://github.com/dbetchkal/stringtranscribe/blob/master/static/D_chord-fiddle.png" width="800">
 
+---
 
-Take for example the following chord on a 
+The real power of this tool is when performance involves a great deal of fidelity to a subtle chord progression. Take for instance the following chord (a _C11 with no 5th_ - not exactly the kind of chord you shout out on the fly.):
+```
+openC_guitar.raag(openC_guitar.tabToAlpha([0, 9, 10, 8, 10, "x"]))
+```
+<img src="https://github.com/dbetchkal/stringtranscribe/blob/master/static/unknown_chord-OpenC_guitar.png" width="1200">
 
-0, 9, 10, 8, 10, x
+<br><br>
+
+Here are the same notes mapped onto the neck of a lap steel guitar in C6 tuning:
+```
+steelGuitar = Instrument(24, [0, 4, 7, 9, 0, 4])
+steelGuitar.raag(openC_guitar.tabToAlpha([0, 9, 10, 8, 10, "x"]))
+```
+<img src="https://github.com/dbetchkal/stringtranscribe/blob/master/static/unknown_chord-lapsteelC6.png" width="1200">
+
+Lots of choices for moving counter-melody!
