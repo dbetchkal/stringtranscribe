@@ -9,11 +9,11 @@ class Instrument(object):
         
         self.num_frets = num_frets
         
-        # check to see if the tuning was input as alpha or integer
+        # check to see if the tuning was input as letter or integer
         if(isinstance( tuning[0] , int )):
             self.tuning = pd.Series(tuning)+capo
         elif(isinstance( tuning[0] , str )):
-            self.tuning = pd.Series(self.alphaToInteger(tuning))+capo
+            self.tuning = pd.Series(self.letterToInteger(tuning))+capo
             
         self.num_strings = len(tuning)   
         
@@ -26,20 +26,20 @@ class Instrument(object):
         self.notation = notation
             
         
-        # a dictionary to convert numeric note names to alpha note names
+        # a dictionary to convert numeric note names to letter note names
         # TO DO: parameter to override the convention of 0 = C ??
-        self.noteToAlpha = {0:"C", 1:"C#", 2:"D", 3:"D#", 4:"E", 5:"F", 6:"F#", 
+        self.noteToLetter = {0:"C", 1:"C#", 2:"D", 3:"D#", 4:"E", 5:"F", 6:"F#", 
                        7:"G", 8:"G#", 9:"A", 10:"A#", 11:"B"}
     
-    def alphaToInteger(self, input):
+    def letterToInteger(self, input):
         
         input = [x.title() for x in input]
     
-        # a dictionary to convert alpha to integer notes
-        alphToIntDict = {"C":0, "C#":1, "Db":1, "D":2, "D#":3, "Eb":3, "E":4, "F":5, "F#":6, 
+        # a dictionary to convert letter to integer notes
+        lettToIntDict = {"C":0, "C#":1, "Db":1, "D":2, "D#":3, "Eb":3, "E":4, "F":5, "F#":6, 
                          "Gb":6, "G":7, "G#":8, "Ab":8, "A":9, "A#":10, "Bb":10, "B":11}
     
-        output = [alphToIntDict[h] for h in input]
+        output = [lettToIntDict[h] for h in input]
     
         return output  
     
@@ -56,7 +56,7 @@ class Instrument(object):
         reduced_tab = np.array([i for j, i in enumerate(tablature) if j not in remove_indices])
         
         # only the strings used in the tab
-        strings_remaining = np.delete(np.arange(1, standardGuitar.num_strings+1), remove_indices)
+        strings_remaining = np.delete(np.arange(1, self.num_strings+1), remove_indices)
         
         # use the fretboard to calculate the notes played
         raagInput = [self.fretboard().loc["string " + str(y), "fret " + str(x)] for x, y in zip(reduced_tab, strings_remaining)]
@@ -64,9 +64,9 @@ class Instrument(object):
         return raagInput
     
     
-    def tabToAlpha(self, tablature):
+    def tabToLetter(self, tablature):
          
-        return [self.noteToAlpha(nT) for nT in self.tabToInteger(tablature)]
+        return [self.noteToLetter(nT) for nT in self.tabToInteger(tablature)]
         
     def neckDiagram(self, notes):
 
@@ -130,7 +130,7 @@ class Instrument(object):
                 plt.annotate(n, xy=(fingering_x[i], fingering_y[i]), ha='center', zorder = 150, fontsize=14)
 
             elif(self.notation == "letter"):
-                plt.annotate(self.noteToAlpha[n], xy=(fingering_x[i], fingering_y[i]), ha='center', zorder = 150, fontsize=14)
+                plt.annotate(self.noteToLetter[n], xy=(fingering_x[i], fingering_y[i]), ha='center', zorder = 150, fontsize=14)
 
         return fig
         
@@ -172,7 +172,7 @@ class Instrument(object):
             
             # if tablature isn't being used, the whole raag must be converted to integer
             if(tab == False):
-                raag = self.alphaToInteger(raag)
+                raag = self.letterToInteger(raag)
             
             # sometimes tabs contain "X" or "x" on the first string
             # but this is fully handled by tabToInteger()
