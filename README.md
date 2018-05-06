@@ -1,7 +1,7 @@
 # stringtranscribe
 <b> A simple class to transcribe and visualize music across stringed instruments. </b>
 
-Imagine you're playing music with an unconventional ensemble made up of an electric bass guitar, 5-string electric octave mandolin, and a lap steel guitar in C6 tuning. Outside of the most basic chords, odds are that you and your friends are not going to have a clear way of communicating songs to one another. To further complicate things, casual musicians may only be familiar with one type notation (say, [tabulature](https://en.wikipedia.org/wiki/Tablature)) further constraining the ability of the group to learn new songs.
+Imagine you're playing music with an unconventional ensemble made up of an electric bass ukulele, 5-string electric octave mandolin, and a lap steel guitar in C6 tuning. Outside of the most basic chords, odds are that you and your friends are not going to have a clear way of communicating song structure to one another. To further complicate things, casual musicians may only be familiar with one type of notation (say, [tabulature](https://en.wikipedia.org/wiki/Tablature),) further constraining the ability of the group to learn new songs.
 
 The purpose of this repository is to provide a way to transcribe music across a wide variety of stringed instruments. By visualizing notes directly on the fretboard of the musician's instrument it attempts to facilitate the exploration of more nuanced harmony when learning compositions. It also allows musicians to choose the notation that suits their learning best.
 
@@ -13,7 +13,7 @@ Fidelity to the harmonic structure of a song is expressed by the concept of [_ra
 
 Throughout this module I use a color scheme that leverages the agreement between the chromatic scale in music and the chromatic color wheel in pigments, both of which have twelve values. The module allows for use of either [letter notation](https://en.wikipedia.org/wiki/Letter_notation) or [integer notation](https://en.wikipedia.org/wiki/Pitch_class#Integer_notation), where "C" = 0. 
 
-To maximize contrast in the plots, progressive colors of the chromatic color wheel are assigned to progressive notes of [the circle of 5ths](https://en.wikipedia.org/wiki/Circle_of_fifths) - each representing seven steps of the chromatic scale. Note D#/3 (blue-violet) is shown as pink, and G/7 (red-orange) is shown as brown.
+To maximize contrast in the plots, progressive colors of the chromatic color wheel are assigned to progressive notes of the [circle of 5ths](https://en.wikipedia.org/wiki/Circle_of_fifths) - each representing seven steps of the chromatic scale. Note D#/3 (blue-violet) is shown as pink, and G/7 (red-orange) is shown as brown.
 
 <img src="https://github.com/dbetchkal/stringtranscribe/blob/master/static/ColorNotationWheel_altScheme.png" width="400">
 
