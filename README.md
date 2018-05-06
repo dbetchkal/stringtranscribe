@@ -82,3 +82,16 @@ steelGuitar.raag(openC_guitar.tabToLetter([0, 9, 10, 8, 10, "x"]))
 <img src="https://github.com/dbetchkal/stringtranscribe/blob/master/static/unknown_chord-lapsteelC6.png" width="1200">
 
 Lots of choices for moving counter-melody!
+
+## Downloading and using this module
+
+Use git to download the library.  Using the path to the repository, import the `Instrument` class: 
+
+```
+import sys
+sys.path.append(r"\*\*\stringtranscribe")
+
+from stringtranscribe import Instrument 
+```
+
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
