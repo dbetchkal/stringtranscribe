@@ -5,7 +5,7 @@ Imagine you're playing music with an unconventional ensemble made up of an elect
 
 The purpose of this repository is to provide a way to transcribe music across a wide variety of stringed instruments. By visualizing notes directly on the fretboard of the musician's instrument it attempts to facilitate the exploration of more nuanced harmony when learning compositions. It also allows musicians to choose the notation that suits their learning best.
 
-Fidelity to the harmonic structure of a song is expressed by the concept of [_raag_](https://en.wikipedia.org/wiki/Raga) within the context of Indian classical music:
+Fidelity to the harmonic structure of a song is expressed by the concept of [_**raag**_](https://en.wikipedia.org/wiki/Raga) within the context of Indian classical music:
 >"A harmonious note, melody, formula, or building block of music available to a musician to construct a state of experience in the audience."
 
 
