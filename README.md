@@ -1,7 +1,7 @@
 # stringtranscribe
 <b> A simple class to transcribe and visualize music across stringed instruments. </b>
 
-Imagine you're playing music with an unconventional ensemble made up of an electric bass guitar, 5-string electric octave mandolin, and a lap steel guitar in C-6 tuning. Outside of the most basic chords, odds are that you and your friends are not going to have a clear way of of communicating songs to one another. To further complicate things, casual musicians may only be familiar with one type notation (say, tabulature) further constraining the ability of the group to learn new songs.
+Imagine you're playing music with an unconventional ensemble made up of an electric bass guitar, 5-string electric octave mandolin, and a lap steel guitar in C6 tuning. Outside of the most basic chords, odds are that you and your friends are not going to have a clear way of of communicating songs to one another. To further complicate things, casual musicians may only be familiar with one type notation (say, tabulature) further constraining the ability of the group to learn new songs.
 
 The purpose of this repository is to provide a way to transcribe music across a wide variety of stringed instruments. By visualizing notes directly on the fretboard of the musician's instrument it attempts to facilitate the exploration of more nuanced harmony when learning compositions. It also allows musicians to choose the notation that suits their learning best.
 
@@ -11,7 +11,7 @@ Fidelity to the harmonic structure of a song is expressed by the concept of [_ra
 
 ## A note on the color scheme
 
-Throughout this module I use a color scheme that leverages the agreement between the chromatic scale in music and the chromatic color wheel in pigments, both of which have twelve values. The module allows for use of either [alpha (i.e., letter) notation](https://en.wikipedia.org/wiki/Letter_notation) or [integer notation](https://en.wikipedia.org/wiki/Pitch_class#Integer_notation), where "C" = 0. 
+Throughout this module I use a color scheme that leverages the agreement between the chromatic scale in music and the chromatic color wheel in pigments, both of which have twelve values. The module allows for use of either [letter notation](https://en.wikipedia.org/wiki/Letter_notation) or [integer notation](https://en.wikipedia.org/wiki/Pitch_class#Integer_notation), where "C" = 0. 
 
 To maximize contrast in the plots, progressive colors of the chromatic color wheel are assigned to progressive notes of [the circle of 5ths](https://en.wikipedia.org/wiki/Circle_of_fifths) - each representing seven steps of the chromatic scale:
 
@@ -27,14 +27,14 @@ For now, instruments are assumed to have:
 - a fingerboard (_fretted or not_) with a certain range of positions that the musician prefers to use
 - a certain number of strings, each with a specific tuning
 
-Here's how you would initialize an acoustic guitar tuned to [Open C tuning](https://en.wikipedia.org/wiki/Open_C_tuning) using alpha notation:
+Here's how you would initialize an acoustic guitar tuned to [Open C tuning](https://en.wikipedia.org/wiki/Open_C_tuning) using letter notation:
 ```
-openC_guitar = Instrument(num_frets = 14, tuning = ["C", "G", "C", "E", "G", "C"])
+openC_guitar = Instrument(num_frets = 14, tuning = ["C", "G", "C", "E", "G", "C"], notation = "letter")
 ```
 
 This one's a fiddle, where the player is only using the 1st, 2nd, and 3rd positions:
 ```
-fiddle = Instrument(num_frets = 10, tuning = ["G", "D", "A", "E"])
+fiddle = Instrument(num_frets = 10, tuning = ["G", "D", "A", "E"], notation = "letter")
 ```
 
 ---
