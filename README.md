@@ -48,19 +48,19 @@ openC_guitar.raag(["D","F#","A"])
 
 Quite a few playable possibilities! <br><br>
 
-It turns out we can return the same information _even if we didn't know the note names in a 'D' chord_. Instead we can use our pre-existing knowledge of the 2nd fret barre chord to provide alternative fingerings. We convert from [tabulature](https://en.wikipedia.org/wiki/Tablature) to alpha notation using the `.tabToAlpha()` method:
+It turns out we can return the same information _even if we didn't know the note names in a 'D' chord_. Instead we can use our pre-existing knowledge of the 2nd fret barre chord to provide alternative fingerings. We convert from [tabulature](https://en.wikipedia.org/wiki/Tablature) to letter notation using the `.tabToLetter()` method:
 
 ```
-openC_guitar.raag(openC_guitar.tabToAlpha([2, 2, 2, 2, 2, 2]))
+openC_guitar.raag(openC_guitar.tabToLetter([2, 2, 2, 2, 2, 2]))
 ```
 <img src="https://github.com/dbetchkal/stringtranscribe/blob/master/static/D_chord-OpenC_guitar_letter.png" width="1200">
 
 ---
 
-Now, what can the fiddler play that would sound good along with the guitar?  Any notes the guitar is playing might be a good start (others _could_ work within the harmonic structure of the song, but this module can't suggest those!) Use `.raag()` to transfer the alpha notes from the guitar onto the fiddle fingerboard:
+Now, what can the fiddler play that would sound good along with the guitar?  Any notes the guitar is playing might be a good start (others _could_ work within the harmonic structure of the song, but this module can't suggest those!) Use `.raag()` to transfer the letter notes from the guitar onto the fiddle fingerboard:
 
 ```
-fiddle.raag(openC_guitar.tabToAlpha([2, 2, 2, 2, 2, 2]))
+fiddle.raag(openC_guitar.tabToLetter([2, 2, 2, 2, 2, 2]))
 ```
 <img src="https://github.com/dbetchkal/stringtranscribe/blob/master/static/D_chord-fiddle_letter.png" width="800">
 
@@ -68,7 +68,7 @@ fiddle.raag(openC_guitar.tabToAlpha([2, 2, 2, 2, 2, 2]))
 
 The real power of this tool is when performance involves a great deal of fidelity to a subtle chord progression. Take for instance the following chord (a _C11 with no 5th_ - not exactly the kind of chord you shout out on the fly.):
 ```
-openC_guitar.raag(openC_guitar.tabToAlpha([0, 9, 10, 8, 10, "x"]))
+openC_guitar.raag(openC_guitar.tabToLetter([0, 9, 10, 8, 10, "x"]))
 ```
 <img src="https://github.com/dbetchkal/stringtranscribe/blob/master/static/unknown_chord-OpenC_guitar.png" width="1200">
 
@@ -77,7 +77,7 @@ openC_guitar.raag(openC_guitar.tabToAlpha([0, 9, 10, 8, 10, "x"]))
 Here are the same notes mapped onto the neck of a lap steel guitar in C6 tuning:
 ```
 steelGuitar = Instrument(24, [0, 4, 7, 9, 0, 4])
-steelGuitar.raag(openC_guitar.tabToAlpha([0, 9, 10, 8, 10, "x"]))
+steelGuitar.raag(openC_guitar.tabToLetter([0, 9, 10, 8, 10, "x"]))
 ```
 <img src="https://github.com/dbetchkal/stringtranscribe/blob/master/static/unknown_chord-lapsteelC6.png" width="1200">
 
