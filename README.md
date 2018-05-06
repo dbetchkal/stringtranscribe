@@ -15,7 +15,7 @@ Throughout this module I use a color scheme that leverages the agreement between
 
 To maximize contrast in the plots, progressive colors of the chromatic color wheel are assigned to progressive notes of [the circle of 5ths](https://en.wikipedia.org/wiki/Circle_of_fifths) - each representing seven steps of the chromatic scale:
 
-<img src="https://github.com/dbetchkal/stringtranscribe/blob/master/static/ColorNotationWheel.png" width="400">
+<img src="https://github.com/dbetchkal/stringtranscribe/blob/master/static/ColorNotationWheel_altScheme.png" width="400">
 
 
 ## The `Instrument` class
