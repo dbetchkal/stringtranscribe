@@ -66,7 +66,7 @@ class Instrument(object):
     
     def tabToLetter(self, tablature):
          
-        return [self.noteToLetter(nT) for nT in self.tabToInteger(tablature)]
+        return [self.noteToLetter[nT] for nT in self.tabToInteger(tablature)]
         
     def neckDiagram(self, notes):
 
