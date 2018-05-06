@@ -44,7 +44,7 @@ But what other ways of voicing 'D' are available?  Knowing the letter names of t
 ```
 openC_guitar.raag(["D","F#","A"])
 ```
-<img src="https://github.com/dbetchkal/stringtranscribe/blob/master/static/D_chord-OpenC_guitar.png" width="1200">
+<img src="https://github.com/dbetchkal/stringtranscribe/blob/master/static/D_chord-OpenC_guitar_letter.png" width="1200">
 
 Quite a few playable possibilities! <br><br>
 
@@ -53,7 +53,7 @@ It turns out we can return the same information _even if we didn't know the note
 ```
 openC_guitar.raag(openC_guitar.tabToAlpha([2, 2, 2, 2, 2, 2]))
 ```
-<img src="https://github.com/dbetchkal/stringtranscribe/blob/master/static/D_chord-OpenC_guitar.png" width="1200">
+<img src="https://github.com/dbetchkal/stringtranscribe/blob/master/static/D_chord-OpenC_guitar_letter.png" width="1200">
 
 ---
 
@@ -62,7 +62,7 @@ Now, what can the fiddler play that would sound good along with the guitar?  Any
 ```
 fiddle.raag(openC_guitar.tabToAlpha([2, 2, 2, 2, 2, 2]))
 ```
-<img src="https://github.com/dbetchkal/stringtranscribe/blob/master/static/D_chord-fiddle.png" width="800">
+<img src="https://github.com/dbetchkal/stringtranscribe/blob/master/static/D_chord-fiddle_letter.png" width="800">
 
 ---
 
