@@ -109,7 +109,7 @@ class Instrument(object):
         plt.ylim((0,10)) # something more elegant for spacing would be cool
 
         # a list comprehension of (row, column, note)  
-        pos = np.array([(i, j, notes.ix[i, j]) for j, col in enumerate(notes.columns) for i, row in enumerate(notes.index)])
+        pos = np.array([(i, j, notes.iloc[i, j]) for j, col in enumerate(notes.columns) for i, row in enumerate(notes.index)])
             
         # these are the positions of each value
         fingering_x = [fret_positions[x] for x, z in zip(pos[:,1], pos[:,2]) if not z == 999]
